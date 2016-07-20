@@ -10,7 +10,6 @@ namespace CustomCollections
     /// <summary>
     /// Generic ring buffer queue on the array.
     /// </summary>
-    /// <typeparam name="T"></typeparam>
     public sealed class Queue<T> : ICollection<T>
     {
         private int capacity;
@@ -42,9 +41,19 @@ namespace CustomCollections
 
         }
 
+        public Queue(IEnumerable<T> values)
+        {
+            Clear();
+            foreach (var value in values)
+            {
+                Add(value);
+            }
+        }
+
         /// <summary>
         /// Creates a queue with the capacity.
         /// </summary>
+        /// <param name="capacity">The initial number of elements that the System.Collections.Queue can contain.</param>
         public Queue(int capacity)
         {
             Capacity = capacity;
@@ -247,6 +256,12 @@ namespace CustomCollections
             tail = 0;
         }
 
+        /// <summary>
+        /// Type &lt;T> should implement the IEquatable&lt;T> interface 
+        /// in order that the method worked correctly.
+        /// </summary>
+        /// <param name="item">Value to find.</param>
+        /// <returns>True if queue has item otherwise returns false.</returns>
         public bool Contains(T item)
         {
             foreach (T value in this)
@@ -289,6 +304,8 @@ namespace CustomCollections
 
         /// <summary>
         /// Removes element only if this element is on the head of the queue.
+        /// Type &lt;T> should implement the IEquatable&lt;T> interface 
+        /// in order that the method worked correctly.
         /// </summary>
         /// <param name="item">Value to delete.</param>
         /// <returns>True if deleted otherwise return false.</returns>

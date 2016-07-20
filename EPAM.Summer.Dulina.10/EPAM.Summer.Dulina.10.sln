@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomCollections", "Custom
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestForTask10", "..\..\TestForTask10\TestForTask10.csproj", "{D93FF58E-92D2-4934-BBC0-FF360A3D7027}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomCollectionsTests", "CustomCollectionsTests\CustomCollectionsTests.csproj", "{914FCE92-DFC6-49DC-84B5-048F4F46861B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D93FF58E-92D2-4934-BBC0-FF360A3D7027}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D93FF58E-92D2-4934-BBC0-FF360A3D7027}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D93FF58E-92D2-4934-BBC0-FF360A3D7027}.Release|Any CPU.Build.0 = Release|Any CPU
+		{914FCE92-DFC6-49DC-84B5-048F4F46861B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{914FCE92-DFC6-49DC-84B5-048F4F46861B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{914FCE92-DFC6-49DC-84B5-048F4F46861B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{914FCE92-DFC6-49DC-84B5-048F4F46861B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
