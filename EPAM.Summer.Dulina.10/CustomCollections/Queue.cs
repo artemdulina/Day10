@@ -43,6 +43,11 @@ namespace CustomCollections
 
         public Queue(IEnumerable<T> values)
         {
+            if (values == null)
+            {
+                throw new ArgumentNullException(nameof(values));
+            }
+
             Clear();
             foreach (var value in values)
             {

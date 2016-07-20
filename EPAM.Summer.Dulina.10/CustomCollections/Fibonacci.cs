@@ -43,5 +43,27 @@ namespace CustomCollections
                 yield return fibonacci[i];
             }
         }
+
+        public static IEnumerable<int> GetFibonacciNumber(int n)
+        {
+            if (n < 1)
+            {
+                throw new ArgumentException("Can't be less than 1", nameof(n));
+            }
+
+            int beforePrevious = 1;
+            int previous = 1;
+
+            yield return beforePrevious;
+
+            int next = 1;
+            for (int i = 0; i < n - 1; i++)
+            {
+                yield return next;
+                next = beforePrevious + previous;
+                beforePrevious = previous;
+                previous = next;
+            }
+        }
     }
 }
