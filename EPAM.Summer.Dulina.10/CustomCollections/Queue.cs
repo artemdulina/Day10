@@ -10,7 +10,7 @@ namespace CustomCollections
     /// <summary>
     /// Generic ring buffer queue on the array.
     /// </summary>
-    public sealed class Queue<T> : ICollection<T>
+    public sealed class Queue<T> : ICollection<T>, ICloneable
     {
         private int capacity;
         private int head;
@@ -63,9 +63,13 @@ namespace CustomCollections
         {
             Capacity = capacity;
             storage = new T[Capacity];
-            Size = 0;
-            head = 0;
-            tail = 0;
+        }
+
+        public Queue(Queue<T> queue)
+        {
+            Capacity = queue.Capacity;
+            storage = new T[Capacity];
+            AddRange(queue);
         }
 
         /// <summary>
@@ -249,6 +253,14 @@ namespace CustomCollections
             Enqueue(item);
         }
 
+        public void AddRange(IEnumerable<T> values)
+        {
+            foreach (var item in values)
+            {
+                Add(item);
+            }
+        }
+
         /// <summary>
         /// Reset all to default state.
         /// </summary>
@@ -341,6 +353,11 @@ namespace CustomCollections
             {
                 return false;
             }
+        }
+
+        public object Clone()
+        {
+            return new Queue<T>(this);
         }
     }
 }

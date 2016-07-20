@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace CustomCollections
 {
+    /// <summary>
+    /// Потом List&lt;T> заменю на BinaryTree&lt;T> 
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public sealed class Set<T> : ICollection<T> where T : class
     {
         private readonly List<T> storage = new List<T>();
