@@ -2,18 +2,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CustomCollections
 {
     /// <summary>
-    /// Потом List&lt;T> заменю на BinaryTree&lt;T> 
+    /// Class set represents a collection of distinct objects 
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public sealed class Set<T> : ICollection<T> where T : class
+    public sealed class Set<T> : ICollection<T> where T : class, IComparable<T>
     {
-        private readonly List<T> storage = new List<T>();
+        private readonly BinaryTree<T> storage = new BinaryTree<T>();
 
         public Set()
         {
